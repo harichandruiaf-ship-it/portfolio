@@ -8,7 +8,7 @@ const projects = [
     company: 'EPAM Systems (Current)',
     period: 'Jul 2025 - May 2026',
     description:
-      'Key engineer on Shell\\'s subsurface exploration platform. Migrated Vue 2 to React, implemented modern cloud architecture, and optimized CI/CD pipelines for enterprise deployment.',
+      "Key engineer on Shell's subsurface exploration platform. Migrated Vue 2 to React, implemented modern cloud architecture, and optimized CI/CD pipelines for enterprise deployment.",
     tags: ['.NET Core', 'React', 'TypeScript', 'AWS', 'Docker', 'Azure'],
     metrics: [
       { label: 'Users', value: '100+' },
