@@ -25,8 +25,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'harichandru_thirumurugan@epam.com',
-      href: 'mailto:harichandru_thirumurugan@epam.com',
+      value: 'harichandruiaf@gmail.com',
+      href: 'mailto:harichandruiaf@gmail.com',
     },
     {
       icon: Linkedin,
@@ -112,7 +112,7 @@ export default function Contact() {
         {/* Main CTA */}
         <motion.div variants={itemVariants} className="pt-8">
           <motion.a
-            href="mailto:harichandru_thirumurugan@epam.com"
+            href="mailto:harichandruiaf@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300"
