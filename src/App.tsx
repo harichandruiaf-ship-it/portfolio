@@ -1,32 +1,38 @@
-import { useEffect, useState } from 'react'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Services from './sections/Services'
-import Projects from './sections/Projects'
-import Skills from './sections/Skills'
-import Contact from './sections/Contact'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+
+// Pages
+import HomePage from './pages/HomePage'
+import ProjectsPage from './pages/ProjectsPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
+import ExperiencePage from './pages/ExperiencePage'
+import SkillsPage from './pages/SkillsPage'
+import LabPage from './pages/LabPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <main className="bg-dark overflow-x-hidden">
-      <Hero scrollY={scrollY} />
-      <About />
-      <Services />
-      <Projects scrollY={scrollY} />
-      <Skills />
-      <Contact />
-    </main>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen bg-[#07070a] text-white">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/lab" element={<LabPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
